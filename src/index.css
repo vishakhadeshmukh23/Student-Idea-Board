@@ -1,16 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Inter, sans-serif;
   background: #f8fafc;
+  padding-top: 100px; 
 }
 
 .navbar {    
   background: #1e3a8a; 
   color: white;
-  padding: 35px 100px;
+  padding: 28px 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .logo {
@@ -23,6 +34,7 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -63,10 +75,11 @@ body {
   .logo {
     font-size: 18px;
   }
+
+  body {
+    padding-top: 80px;
+  }
 }
-
-
-
 
 .hero {
   min-height: 65vh;
@@ -118,7 +131,6 @@ body {
   border-radius: 200px;
 }
 
-
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
@@ -140,7 +152,6 @@ body {
   }
 }
 
-
 .dashboard {
   max-width: 700px;
   margin: 40px auto;
@@ -152,13 +163,11 @@ body {
 
 .empty {
   text-align: center;
-  margin-top: 200px;
-  margin-bottom: 200px;
+  margin: 200px 0;
   font-size: 20px;
   font-weight: 500;
   color: #64748b;
 }
-
 
 .form-card {
   width: 50%;
@@ -186,7 +195,6 @@ body {
   border-radius: 10px;
   border: 1px solid #cbd5f5;
   outline: none;
-  transition: all 0.3s ease;
   font-family: inherit;
 }
 
@@ -211,7 +219,6 @@ body {
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(34, 197, 94, 0.35);
 }
 
@@ -223,100 +230,61 @@ body {
 @media (max-width: 768px) {
   .form-card {
     width: 90%;
-    padding: 24px;
-  }
-
-  .form-card h2 {
-    font-size: 24px;
   }
 }
 
 .idea-card {
-  background: #ffffff;
+  background: white;
   padding: 24px 28px;
   border-radius: 16px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .idea-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
 }
 
 .idea-card h2 {
   font-size: 22px;
   font-weight: 700;
   color: #1e3a8a;
-  margin-bottom: 10px;
 }
 
 .idea-card p {
   font-size: 15px;
   color: #475569;
-  line-height: 1.6;
-  margin-bottom: 18px;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 20px;
 }
 
 .tags span {
   background: #e0e7ff;
   color: #1e40af;
-  font-size: 13px;
-  font-weight: 500;
   padding: 6px 12px;
   border-radius: 999px;
+  font-size: 13px;
 }
 
 .actions {
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .actions button {
   border: none;
   padding: 8px 14px;
   border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
   cursor: pointer;
-  transition: all 0.25s ease;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.actions button:nth-child(1) {
-  background: #dbeafe;
-  color: #1d4ed8;
-}
-
-.actions button:nth-child(2) {
-  background: #f1f5f9;
-  color: #334155;
-}
-
-.actions button:nth-child(3) {
-  background: #fef3c7;
-  color: #92400e;
-}
-
-.actions button:nth-child(4) {
-  background: #fee2e2;
-  color: #b91c1c;
 }
 
 .actions button:hover {
   transform: scale(1.05);
 }
-
 
 .footer {
   background: #0f172a; 
@@ -325,19 +293,11 @@ body {
   text-align: center;
 }
 
-.footer-links p {
-  margin-bottom: 16px;
-  font-size: 14px;
-  color: #e5e7eb;
-}
-
 .social-icons {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 16px;
 }
-
 .social-icons a {
   color: white;
   font-size: 20px;
@@ -345,16 +305,10 @@ body {
 }
 
 .social-icons a:hover {
-  color: #22c55e; 
-  transform: scale(1.2);
+  color: #22c55e;
 }
 
 
-.footer .copyright {
-  font-size: 13px;
-  color: #9ca3af;
-}
- 
 .comment-box {
   margin-top: 12px;
   display: flex;
@@ -364,28 +318,10 @@ body {
 .comment-box input {
   flex: 1;
   padding: 8px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-.comment-box button {
-  padding: 8px 14px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.comment-box button:hover {
-  background: #1e40af;
 }
 
 .comment {
-  margin-top: 6px;
-  padding: 6px 10px;
   background: #f1f5f9;
+  padding: 6px 10px;
   border-radius: 6px;
-  font-size: 14px;
 }
